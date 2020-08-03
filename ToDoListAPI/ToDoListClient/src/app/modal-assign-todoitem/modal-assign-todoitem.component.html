@@ -1,0 +1,23 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">Assign ToDo </h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p> ToDo assigned to : {{todoitem.userName}}</p>
+  <ul class="list-group"  *ngFor="let item of this.users">
+    <li 
+    *ngIf="todoitem.userName !== item.userName && this.canAssign(item)"
+    class="list-group-item d-flex justify-content-between align-items-center">
+       
+       {{item.userName}}
+      
+    <button class="btn btn-primary" (click)="assign(item)"> Assign </button>
+  </li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
