@@ -41,8 +41,14 @@ namespace ToDoListAPI.Seeders
                 {
                     Email = "admin@gmail.com",
                     PasswordHash = "123456",
-                    UserName = "admin"
+                    UserName = "admin@gmail.com"
                 };
+
+                await userManager.CreateAsync(superAdmin, superAdmin.PasswordHash);
+                await userManager.AddToRoleAsync(superAdmin, nameof(EnumRoles.Roles.Admin));
+                await db.SaveChangesAsync();
+
+
                 for (int i = 0; i < 10; i++)
                 {
                 

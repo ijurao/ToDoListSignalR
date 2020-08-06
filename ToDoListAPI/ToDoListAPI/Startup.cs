@@ -85,7 +85,7 @@ namespace ToDoListAPI
 
             services.Configure<IdentityOptions>(options =>
     options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
-            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("local")).UseLazyLoadingProxies());
+            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("default")).UseLazyLoadingProxies());
 
             services.AddSignalR();
             services.AddControllers(options =>
