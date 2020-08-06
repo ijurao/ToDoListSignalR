@@ -1,6 +1,0 @@
-.vscode
-wwwroot
-bin
-obj
-*.db
-*.sln
